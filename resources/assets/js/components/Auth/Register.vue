@@ -40,7 +40,7 @@
                   :error-messages="errors.collect('fqdn')"
                   label="FQDN"
                   name="fqdn"
-                  suffix=".app.itplog.com">
+                  suffix=".insytes.io">
 
                   <v-fade-transition leave-absolute slot="append">
                   <v-progress-circular

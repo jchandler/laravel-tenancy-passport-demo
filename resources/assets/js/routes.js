@@ -22,37 +22,37 @@ const host = window.location.host.toUpperCase()
 const routes = () => {
 
 	//Test for portal routes
-	if (host.includes('APP.ITPLOG.COM')) {
+	if (host.includes('ADMIN.INSYTES.IO')) {
 
-		return [
-		  {path: '/', component: DashboardLayout,
-		    children: [
-		    	{path: 'dashboard', name: 'dashboard', component: Dashboard},
-		    	{path: 'tickets', name: 'dashbaord.tickets', component: Tickets},
-		    ]
-			},
-			{path: '/auth', component: AuthLayout,
-				children: [
-					{path: '/login', name: 'auth.login' ,component: Login},
-			    {path: '/password/email', name: 'auth.email', component: ResetEmail},
-			    {path: '/password/reset/:token', component: ResetPassword, props: true},
-				]
-			},
-			{path: '*', component: NotFound}
-		]
-
+                return [
+                {path: '/', name: 'landing.welcome', component: Welcome},
+                {path: '/auth', component: AuthLayout,
+                        children: [
+                                {path: '/register', name: 'landing.register', component: Register}
+                        ]
+                        },
+                        {path: '*', component: NotFound}
+                ]
+	
 	//Fallback to landing page routes
 	} else {
 
-		return [
-	    	{path: '/', name: 'landing.welcome', component: Welcome},
-	    	{path: '/auth', component: AuthLayout,
-	    		children: [
-	    			{path: '/register', name: 'landing.register', component: Register}
-	    		]
-			},
-			{path: '*', component: NotFound}
-		]
+                return [
+                  {path: '/', component: DashboardLayout,
+                    children: [
+                        {path: 'dashboard', name: 'dashboard', component: Dashboard},
+                        {path: 'tickets', name: 'dashbaord.tickets', component: Tickets},
+                    ]
+                        },
+                        {path: '/auth', component: AuthLayout,
+                                children: [
+                                        {path: '/login', name: 'auth.login' ,component: Login},
+                            {path: '/password/email', name: 'auth.email', component: ResetEmail},
+                            {path: '/password/reset/:token', component: ResetPassword, props: true},
+                                ]
+                        },
+                        {path: '*', component: NotFound}
+                ]
 	}
 }
 
