@@ -1,9 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\API;
 
 use App\PoProxResult;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use App\Http\Resources\PoProxResult as PoProxResultResource;
+
 
 class PoProxResultsController extends Controller
 {
@@ -14,7 +17,7 @@ class PoProxResultsController extends Controller
      */
     public function index()
     {
-        //
+        return PoProxResultResource::collection(PoProxResult::all());
     }
 
     /**

@@ -42,6 +42,7 @@ const routes = () => {
                     children: [
                         {path: 'dashboard', name: 'dashboard', component: Dashboard},
                         {path: 'tickets', name: 'dashbaord.tickets', component: Tickets},
+                        {path: 'barney', name: 'dashboard.barney', component: Barney},
                     ]
                         },
                         {path: '/auth', component: AuthLayout,

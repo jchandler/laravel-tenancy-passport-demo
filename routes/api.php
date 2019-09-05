@@ -23,5 +23,6 @@ Route::group(['prefix' => 'v1'], function () {
 
 Route::group(['middleware' => 'auth:api', 'prefix' => 'v1'], function () {
     
-    Route::apiResource('tickets', 'API\TicketController');
+	Route::apiResource('tickets', 'API\TicketController');
+	Route::apiResource('barney', 'API\PoProxResultController');
 });
